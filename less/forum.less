@@ -1,0 +1,150 @@
+/* --- FRAMIO CREATOR STUDIO (FINAL: CENTERED, MINIMAL & CLEAN) --- */
+
+/* 1. MASAÜSTÜ (PC) İÇİN KAFES SİSTEMİ */
+.FramioShareModal {
+    position: fixed !important;
+    top: 50% !important; left: 50% !important; transform: translate(-50%, -50%) !important;
+    width: 95vw !important; height: 85vh !important; min-height: 550px !important; max-width: 1200px !important;
+    margin: 0 !important; background: transparent !important; box-shadow: none !important; padding: 0 !important; border: none !important;
+    display: block !important; 
+
+    /* İçerik Kutusu */
+    .Modal-content {
+        position: relative !important; width: 100% !important; height: 100% !important;
+        background: #fff; border-radius: 12px; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        border: 1px solid #dbdbdb; overflow: hidden !important; padding: 0 !important; display: block !important;
+    }
+
+    /* Başlık - TAM ORTADA */
+    .Modal-header {
+        position: absolute !important; top: 0; left: 0; right: 0; height: 60px !important;
+        padding: 0 20px; background: #fff; border-bottom: 1px solid #e0e0e0; z-index: 20;
+        display: flex; align-items: center; justify-content: center; /* Merkeze Al */
+        
+        h3 { font-weight: 700; font-size: 18px; color: #1c1e21; margin: 0; text-align: center; }
+    }
+
+    /* Gövde */
+    .Modal-body {
+        position: absolute !important; top: 60px !important; bottom: 0 !important; left: 0 !important; right: 0 !important;
+        padding: 0 !important; margin: 0 !important; height: auto !important;
+        display: flex !important; flex-direction: row !important; background: #f0f2f5; overflow: hidden !important;
+    }
+}
+
+/* --- SOL SÜTUN (SIDEBAR) --- */
+.Framio-Sidebar {
+    width: 380px !important; height: 100% !important; background: #fff; border-right: 1px solid #ddd;
+    display: flex; flex-direction: column; overflow-y: auto !important; z-index: 10;
+
+    &::-webkit-scrollbar { width: 5px; } &::-webkit-scrollbar-thumb { background: #ccc; border-radius: 3px; }
+
+    .Sidebar-Section { padding: 20px; border-bottom: 1px solid #eee; h3 { margin: 0 0 10px 0; font-size: 13px; font-weight: 700; color: #65676b; text-transform: uppercase; } }
+
+    .Media-Grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+    .Media-Item {
+        position: relative; aspect-ratio: 1; cursor: pointer; border-radius: 6px; overflow: hidden; background: #eee; border: 2px solid transparent;
+        img { width: 100%; height: 100%; object-fit: cover; }
+        &.selected { border-color: #1877f2; img { opacity: 0.9; } .Selection-Badge { display: flex; } }
+        .Selection-Badge { position: absolute; top: 4px; right: 4px; background: #1877f2; color: white; width: 18px; height: 18px; border-radius: 50%; font-size: 10px; font-weight: bold; display: none; align-items: center; justify-content: center; }
+    }
+
+    .Form-Group { margin-bottom: 20px; label { font-weight: 600; font-size: 13px; color: #1c1e21; display: block; margin-bottom: 8px; } }
+    textarea.FormControl { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif !important; min-height: 180px; padding: 12px; border: 1px solid #ddd; border-radius: 8px; }
+    
+    /* --- MİNİMAL PLATFORM BUTONLARI (SOFT UI) --- */
+    .Platform-Checkboxes {
+        display: flex; gap: 10px; width: 100%;
+    }
+
+    .Platform-Btn {
+        flex: 1; display: flex; align-items: center; justify-content: center; gap: 8px; 
+        padding: 10px; 
+        border: 1px solid #e4e6eb; /* Çok hafif gri sınır */
+        border-radius: 8px; cursor: pointer; 
+        font-weight: 600; font-size: 13px; 
+        background: #fff; /* Beyaz zemin */
+        color: #65676b; 
+        transition: all 0.2s ease;
+        outline: none !important; /* Mavi çerçeveyi sil */
+        
+        i { font-size: 16px; transition: color 0.2s; }
+
+        &:hover { background: #f2f2f2; }
+        &:focus { outline: none; box-shadow: none; } /* Odaklanma çizgisini sil */
+
+        /* Facebook Aktif: Pastel Mavi Zemin, Koyu Mavi Yazı */
+        &.fb.active { 
+            background: #e7f3ff; /* Pastel Mavi */
+            color: #1877f2; 
+            border-color: #1877f2; 
+        }
+        
+        /* Instagram Aktif: Pastel Pembe Zemin, Marka Rengi Yazı */
+        &.ig.active { 
+            background: #fef0f5; /* Pastel Pembe */
+            color: #c13584; /* Instagram Logosu Ana Rengi */
+            border-color: #c13584;
+        }
+    }
+
+    .Action-Area { padding: 20px; background: #fff; border-top: 1px solid #eee; margin-top: auto; position: sticky; bottom: 0; }
+}
+
+/* --- SAĞ SÜTUN (ÖNİZLEME) --- */
+.Framio-Preview-Col {
+    flex: 1 !important; height: 100% !important; background: #f0f2f5;
+    overflow-y: auto !important; overflow-x: hidden; display: block !important;
+    padding: 30px; text-align: center; position: relative;
+
+    &::-webkit-scrollbar { width: 10px; } &::-webkit-scrollbar-thumb { background: #ccc; border-radius: 5px; border: 3px solid #f0f2f5; }
+
+    .Preview-Switcher {
+        display: inline-flex; margin: 0 auto 25px auto; background: #fff; border-radius: 20px; padding: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        button { border: none; background: transparent; padding: 6px 15px; border-radius: 16px; font-size: 13px; font-weight: 600; cursor: pointer; color: #666; outline: none; &.active { background: #e4e6eb; color: #000; } }
+    }
+
+    /* KART */
+    .Preview-Card {
+        width: 450px; max-width: 100%; background: #fff; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); overflow: hidden; 
+        margin: 0 auto 50px auto; text-align: left; border: 1px solid #ddd;
+
+        .Post-Image-Container {
+            width: 100%; background: #000; position: relative; min-height: 250px; max-height: 500px !important; display: flex; align-items: center; justify-content: center; overflow: hidden;
+            img { width: 100%; height: 100%; max-height: 500px !important; object-fit: contain; display: block; }
+            .Nav-Btn { position: absolute; top: 50%; transform: translateY(-50%); width: 30px; height: 30px; background: rgba(255,255,255,0.5); border-radius: 50%; border: none; cursor: pointer; color: #000; z-index: 10; display:flex; align-items:center; justify-content:center; &:hover { background: rgba(255,255,255,0.8); } &.prev { left: 10px; } &.next { right: 10px; } }
+            .Counter { position: absolute; top: 10px; right: 10px; background: rgba(0,0,0,0.6); color: white; padding: 2px 8px; border-radius: 10px; font-size: 11px; }
+        }
+    }
+
+    /* FACEBOOK */
+    .Facebook-Card {
+        .Post-Header { padding: 12px 16px; display: flex; align-items: center; gap: 10px; .Avatar { width: 40px; height: 40px; border-radius: 50%; background: #ddd; } .Info { display: flex; flex-direction: column; .Name { font-weight: 600; font-size: 15px; color: #050505; } .Time { font-size: 13px; color: #65676b; } } }
+        .Post-Text { padding: 4px 16px 12px 16px; font-size: 15px; color: #050505; line-height: 1.4; white-space: pre-wrap; .SeeMore-Btn { font-weight: 600; cursor: pointer; &:hover { text-decoration: underline; } } }
+        .Post-Footer { padding: 0 16px; height: 44px; border-top: 1px solid #ced0d4; display: flex; align-items: center; justify-content: space-between; color: #65676b; font-weight: 600; font-size: 14px; }
+    }
+
+    /* INSTAGRAM */
+    .Instagram-Card {
+        border-radius: 3px;
+        .Post-Header { padding: 10px; display: flex; align-items: center; gap: 10px; .Avatar { width: 32px; height: 32px; border-radius: 50%; background: #ddd; } .Name { font-weight: 600; font-size: 14px; color: #262626; flex: 1; } }
+        .Post-Image-Container { background: #fafafa; }
+        .Action-Bar { padding: 10px 12px; display: flex; align-items: center; gap: 16px; i { font-size: 24px; color: #262626; cursor: pointer; } }
+        .Likes-Section { padding: 0 12px; font-weight: 600; font-size: 14px; color: #262626; margin-bottom: 6px; }
+        .Caption-Section { padding: 0 12px 10px 12px; font-size: 14px; line-height: 1.4; color: #262626; .Username { font-weight: 600; margin-right: 5px; } .SeeMore-Btn { color: #8e8e8e; cursor: pointer; } .Time { display: block; margin-top: 6px; font-size: 10px; color: #8e8e8e; text-transform: uppercase; } }
+    }
+}
+
+/* --- MOBİL --- */
+@media (max-width: 900px) {
+    .FramioShareModal { position: relative !important; top: 0 !important; left: 0 !important; transform: none !important; width: 100% !important; height: 100% !important; margin: 0 !important; border-radius: 0 !important; min-height: auto !important; display: flex !important; }
+    .FramioShareModal .Modal-content { position: static !important; height: auto !important; border-radius: 0 !important; border: none !important; overflow: visible !important; }
+    .FramioShareModal .Modal-header { position: static !important; }
+    .FramioShareModal .Modal-body { position: static !important; height: auto !important; display: flex !important; flex-direction: column !important; overflow-y: visible !important; padding-bottom: 80px !important; }
+    .Framio-Sidebar { width: 100% !important; height: auto !important; border-right: none; border-bottom: 1px solid #ddd; overflow: visible !important; order: 1; }
+    .Framio-Sidebar .Media-Grid { display: flex; overflow-x: auto; padding-bottom: 15px; }
+    .Framio-Sidebar .Media-Item { min-width: 90px; height: 90px; }
+    .Framio-Preview-Col { width: 100% !important; height: auto !important; overflow: visible !important; padding: 20px 10px; order: 2; margin-bottom: 100px; }
+    .Framio-Preview-Col .Preview-Card { width: 100% !important; margin: 0 0 20px 0; }
+    .Framio-Sidebar .Action-Area { position: fixed; bottom: 0; left: 0; right: 0; z-index: 1000; border-top: 1px solid #ddd; padding: 15px; box-shadow: 0 -4px 10px rgba(0,0,0,0.1); }
+}

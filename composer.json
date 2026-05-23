@@ -1,0 +1,30 @@
+{
+    "name": "framio/social-share",
+    "description": "Forum mesajlarını manuel olarak düzenleyip Meta Business Suite (Facebook/Instagram) üzerinde paylaşır.",
+    "type": "flarum-extension",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Framio",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "flarum/core": "^2.0"
+    },
+    "extra": {
+        "flarum-extension": {
+            "title": "Framio Social Share",
+            "icon": {
+                "name": "fab fa-facebook-square",
+                "backgroundColor": "#1877F2",
+                "color": "#fff"
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Framio\\SocialShare\\": "src/"
+        }
+    }
+}
